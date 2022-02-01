@@ -2,7 +2,7 @@ name: Shell comands
 on:
   - push
 jobs:
-  run-shell-comand:
+  run-shell-command:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
