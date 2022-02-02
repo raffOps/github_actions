@@ -9,9 +9,9 @@ jobs:
         run: |
           pwd
           ls
-      - name: checkout
-        id: checkout
-        uses: actions/checkout
+      # - name: checkout
+      #   id: checkout
+      #   uses: actions/checkout@v1
       - name: clone_dbt
         run: |
           git clone git@github.com:$GITHUB_REPOSITORY
