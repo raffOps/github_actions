@@ -1,5 +1,5 @@
 name: Actions workflow
-on: [push]
+on: [push, pull_request]
 
 jobs:
   run-github-actions:
@@ -9,14 +9,14 @@ jobs:
         run: |
           pwd
           ls
-      # - name: checkout
-      #   id: checkout
-      #   uses: actions/checkout@v1
+      - name: checkout
+        id: checkout
+        uses: actions/checkout@v1
       - name: clone_dbt
         run: |
           echo "${{ github.token }}"
-          git clone git@github.com:$GITHUB_REPOSITORY
-          git checkout $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_SHA
       - name: list files
         run: |
           ls -Ra
