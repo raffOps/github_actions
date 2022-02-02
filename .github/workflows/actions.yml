@@ -17,9 +17,7 @@ jobs:
         uses: actions/checkout@v1
       - name: clone_dbt
         run: |
-          echo "${{ github.token }}"
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_SHA
+          git clone "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/rjribeiro/dbt.git" dbt
       - name: list files
         run: |
           ls -Ra
