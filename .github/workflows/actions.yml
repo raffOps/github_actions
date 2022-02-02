@@ -11,11 +11,11 @@ jobs:
           ls
       - name: checkout
         id: checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout
       - name: clone_dbt
         run: |
-          git clone git@github.com:rjribeiro/dbt.git dbt
-          git checkout $GITHUB_REF
+          git clone git@github.com:$GITHUB_REPOSITORY
+          git checkout $GITHUB_SHA
       - name: list files
         run: |
           ls -Ra
